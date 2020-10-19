@@ -54,6 +54,7 @@ Swagger is available at http://HOST:PORT/docs
 ├── pm2.json
 ├── src
 │   ├── app.js
+│   ├── server.js
 │   ├── config
 │   │   └── swagger.js
 │   ├── models
@@ -65,7 +66,6 @@ Swagger is available at http://HOST:PORT/docs
 │   │   └── responseApi.js
 │   ├── schema
 │   │   └── userSchema.js
-│   ├── server.js
 │   ├── services
 │   │   └── auth.js
 │   └── utils
