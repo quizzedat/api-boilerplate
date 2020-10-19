@@ -3,10 +3,12 @@
 # Features
 
 -   Fastify framewrok
+-   Joi for parameter validation
 -   Mongoose for db modeling
 -   JWT for Authentication
 -   CORS Support
--   Auto deploy to AWS via GitLab
+-   ETag Support
+-   Auto deploy to AWS via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
 
 ## Dependencies
 
@@ -25,7 +27,7 @@
 
 ### Set up environment variables
 
--   `cp env.sample .env`, modify as required
+-   `cp env.sample .env`, and modify as required
 
 ### If you have pm2 installed
 
