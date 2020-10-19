@@ -1,0 +1,25 @@
+# Node docker image on which our code would run
+image: node:12
+
+#This command is run before all the jobs
+before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - yarn global add pm2 node-gyp
+    - yarn install
+
+cache:
+    paths:
+        - node_modules/
+        - .yarn
+stages:
+    - deploy
+
+# lint and test are two different jobs in the same stage.
+# This allows us to run these two in parallel and making build faster
+
+deployToAWS:
+    only:
+        - tags
+    stage: deploy
+    script:
+        - bash deploy/deploy.sh

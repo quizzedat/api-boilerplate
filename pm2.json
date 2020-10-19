@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "pschub-api",
+            "script": "./src/server.js",
+            "exec_mode": "cluster",
+            "max_memory_restart": "512M",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}
