@@ -1,5 +1,4 @@
 const Package = require('../../package.json')
-const fastJson = require('fast-json-stringify')
 
 const base = {
     response: {
@@ -10,32 +9,6 @@ const base = {
     },
     data: []
 }
-
-const stringify = fastJson({
-    type: 'object',
-    properties: {
-        response: {
-            type: 'object',
-            properties: {
-                statusCode: {
-                    type: 'number'
-                },
-                message: {
-                    type: 'string'
-                },
-                error: {
-                    type: 'boolean'
-                },
-                version: {
-                    type: 'string'
-                }
-            }
-        },
-        data: {
-            type: 'array'
-        }
-    }
-})
 
 /**
  * Build response base by plugin
