@@ -14,7 +14,6 @@
     "license": "ISC",
     "dependencies": {
         "dotenv": "^8.2.0",
-        "fast-json-stringify": "^2.2.9",
         "fastify": "^3.7.0",
         "fastify-autoload": "^3.3.0",
         "fastify-cors": "^4.1.0",
@@ -24,9 +23,6 @@
         "fastify-oas": "^3.0.3",
         "fastify-plugin": "^3.0.0",
         "fastify-swagger": "^3.4.0",
-        "joi": "^17.3.0",
-        "joi-objectid": "^3.0.1",
-        "joi-to-json": "^1.2.0",
         "lodash": "^4.17.20",
         "mongoose": "^5.10.10",
         "mongoose-unique-validator": "^2.0.3",
