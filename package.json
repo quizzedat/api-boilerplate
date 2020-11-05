@@ -23,6 +23,7 @@
         "fastify-oas": "^3.0.3",
         "fastify-plugin": "^3.0.0",
         "fastify-swagger": "^3.4.0",
+        "fluent-schema": "^1.0.5",
         "lodash": "^4.17.20",
         "mongoose": "^5.10.10",
         "mongoose-unique-validator": "^2.0.3",

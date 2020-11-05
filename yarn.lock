@@ -631,6 +631,13 @@ flatstr@^1.0.12:
   resolved "https://registry.yarnpkg.com/flatstr/-/flatstr-1.0.12.tgz#c2ba6a08173edbb6c9640e3055b95e287ceb5931"
   integrity sha512-4zPxDyhCyiN2wIAtSLI6gc82/EjqZc1onI4Mz/l0pWrAlsSfYH/2ZIcU+e3oA2wDwbzIWNKwa23F8rh6+DRWkw==
 
+fluent-schema@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/fluent-schema/-/fluent-schema-1.0.5.tgz#7a17bdab726f17d2b3c845557bccbb73f2570c5a"
+  integrity sha512-JzLiRtpIo8BZjc4wtIags3hyntIFCI/UqTXStCTs8L17ftYALPM6aqP1lrdTdsOk3SYWQOsdKFYVuetZOmSCTg==
+  dependencies:
+    deepmerge "^4.2.2"
+
 forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
