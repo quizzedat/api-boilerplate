@@ -1,5 +1,5 @@
 # Node docker image on which our code would run
-image: node:12
+image: node:14
 
 #This command is run before all the jobs
 before_script:
