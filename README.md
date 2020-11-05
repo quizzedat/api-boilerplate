@@ -3,7 +3,7 @@
 # Features
 
 -   Fastify framewrok
--   Joi for parameter validation
+-   `fluent-schema` for parameter validation
 -   Mongoose for db modeling
 -   JWT for Authentication
 -   CORS Support
