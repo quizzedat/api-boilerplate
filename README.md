@@ -12,7 +12,7 @@
 
 ## Dependencies
 
-1. Node.js: v12.19.0
+1. Node.js: v14
 2. Install yarn package manager for node https://yarnpkg.com/lang/en/docs/install/#debian-stable
 3. PM2, process monitor for node, install using `yarn global add pm2`
 
@@ -22,7 +22,7 @@
 
 -   Run `git clone git@github.com:quizzedat/api-boilerplate.git api`
 -   Run `cd api`
--   Run `nvm install v12.19.0 && nvm use`
+-   Run `nvm use`
 -   Run `yarn`
 
 ### Set up environment variables
