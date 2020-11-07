@@ -2,9 +2,9 @@
 
 # Features
 
--   Fastify framewrok
+-   Fastify framework
 -   `fluent-schema` for parameter validation
--   Mongoose for db modeling
+-   Mongoose for db modelling
 -   JWT for Authentication
 -   CORS Support
 -   ETag Support
@@ -41,37 +41,37 @@
 
 Swagger is available at http://HOST:PORT/docs
 
-## Structure
+## File Structure
 
 ```
 .
 ├── LICENSE
 ├── README.md
 ├── deploy
-│   ├── deploy.sh
-│   ├── disableHostKeyChecking.sh
-│   └── updateAndRestart.sh
+│   ├── deploy.sh
+│   ├── disableHostKeyChecking.sh
+│   └── updateAndRestart.sh
 ├── env.sample
 ├── package.json
 ├── pm2.json
 ├── src
-│   ├── app.js
-│   ├── server.js
-│   ├── config
-│   │   └── swagger.js
-│   ├── models
-│   │   └── userModel.js
-│   ├── plugins
-│   │   ├── README.md
-│   │   ├── authJwt.js
-│   │   ├── mongo.js
-│   │   └── responseApi.js
-│   ├── schema
-│   │   └── userSchema.js
-│   ├── services
-│   │   └── auth.js
-│   └── utils
-│       ├── generatorResponse.js
-│       └── index.js
+│   ├── app.js
+│   ├── server.js
+│   ├── config
+│   │   └── swagger.js
+│   ├── models
+│   │   └── userModel.js
+│   ├── plugins
+│   │   ├── README.md
+│   │   ├── authJwt.js
+│   │   ├── mongo.js
+│   │   └── responseApi.js
+│   ├── schema
+│   │   └── userSchema.js
+│   ├── services
+│   │   └── auth.js
+│   └── utils
+│       ├── generatorResponse.js
+│       └── index.js
 └── yarn.lock
 ```
