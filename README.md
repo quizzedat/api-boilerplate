@@ -1,14 +1,15 @@
 # API Boilerplate
 
-# Features
+## Features
 
 - Fastify framework
-- `fluent-schema` for parameter validation
+- `fluent-schema` for payload validation
 - Mongoose for db modelling
 - JWT for Authentication
 - CORS Support
 - ETag Support
-- Auto deploy to AWS via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
+- Auto deploy to AWS-EC2 via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
+- Auto deploy to AWS-EC2 via GitHub Actions
 
 ## Dependencies
 
@@ -20,8 +21,8 @@
 
 ### install necessary dependencies
 
-- Run `git clone git@github.com:quizzedat/api-boilerplate.git api`
-- Run `cd api`
+- Run `git clone git@github.com:lightrainstech/api-boilerplate.git`
+- Run `cd api-boilerplate`
 - Run `nvm use`
 - Run `yarn`
 
@@ -45,33 +46,39 @@ Swagger is available at http://HOST:PORT/docs
 
 ```
 .
+├── .github
+│   └── workflows
+│       └── deploy-master.yml
+├── .gitignore
+├── .gitlab-ci.yml
+├── .nvmrc
 ├── LICENSE
 ├── README.md
 ├── deploy
-│   ├── deploy.sh
-│   ├── disableHostKeyChecking.sh
-│   └── updateAndRestart.sh
+│   ├── deploy.sh
+│   ├── disableHostKeyChecking.sh
+│   └── updateAndRestart.sh
 ├── env.sample
 ├── package.json
 ├── pm2.json
 ├── src
-│   ├── app.js
-│   ├── server.js
-│   ├── config
-│   │   └── swagger.js
-│   ├── models
-│   │   └── userModel.js
-│   ├── plugins
-│   │   ├── README.md
-│   │   ├── authJwt.js
-│   │   ├── mongo.js
-│   │   └── responseApi.js
-│   ├── schema
-│   │   └── userSchema.js
-│   ├── services
-│   │   └── auth.js
-│   └── utils
-│       ├── generatorResponse.js
-│       └── index.js
+│   ├── app.js
+│   ├── config
+│   │   └── swagger.js
+│   ├── models
+│   │   └── userModel.js
+│   ├── plugins
+│   │   ├── README.md
+│   │   ├── authJwt.js
+│   │   ├── mongo.js
+│   │   └── responseApi.js
+│   ├── schema
+│   │   └── userSchema.js
+│   ├── server.js
+│   ├── services
+│   │   └── auth.js
+│   └── utils
+│       ├── generatorResponse.js
+│       └── index.js
 └── yarn.lock
 ```
