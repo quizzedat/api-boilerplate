@@ -2,17 +2,17 @@
 
 # Features
 
--   Fastify framework
--   `fluent-schema` for parameter validation
--   Mongoose for db modelling
--   JWT for Authentication
--   CORS Support
--   ETag Support
--   Auto deploy to AWS via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
+- Fastify framework
+- `fluent-schema` for parameter validation
+- Mongoose for db modelling
+- JWT for Authentication
+- CORS Support
+- ETag Support
+- Auto deploy to AWS via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
 
 ## Dependencies
 
-1. Node.js: v14
+1. Node.js: v16
 2. Install yarn package manager for node https://yarnpkg.com/lang/en/docs/install/#debian-stable
 3. PM2, process monitor for node, install using `yarn global add pm2`
 
@@ -20,22 +20,22 @@
 
 ### install necessary dependencies
 
--   Run `git clone git@github.com:quizzedat/api-boilerplate.git api`
--   Run `cd api`
--   Run `nvm use`
--   Run `yarn`
+- Run `git clone git@github.com:quizzedat/api-boilerplate.git api`
+- Run `cd api`
+- Run `nvm use`
+- Run `yarn`
 
 ### Set up environment variables
 
--   `cp env.sample .env`, and modify as required
+- `cp env.sample .env`, and modify as required
 
 ### If you have pm2 installed
 
--   You can use `pm2 start ./src/server.js`
+- You can use `pm2 start ./src/server.js`
 
 ### Or manually (dev mode)
 
--   Run `yarn run dev`
+- Run `yarn run dev`
 
 ## Swagger UI
 

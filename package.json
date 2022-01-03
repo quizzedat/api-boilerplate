@@ -1,37 +1,37 @@
 {
-    "name": "quizzed-ms",
-    "version": "0.0.1",
-    "description": "Quizzed Microservice Boilerplate",
-    "main": "index.js",
-    "scripts": {
-        "start": "node ./src/server.js | pino-colada",
-        "dev": "./node_modules/nodemon/bin/nodemon.js ./src/server.js | pino-colada",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "version": "",
-        "postversion": "git push && git push --tags"
-    },
-    "author": "niksmac <niksmac@quizzed.at>",
-    "license": "ISC",
-    "dependencies": {
-        "dotenv": "^8.2.0",
-        "fastify": "^3.14.0",
-        "fastify-autoload": "^3.6.0",
-        "fastify-cors": "^5.2.0",
-        "fastify-etag": "^2.1.0",
-        "fastify-jwt": "^2.4.0",
-        "fastify-mongodb": "^2.0.1",
-        "fastify-oas": "^3.0.8",
-        "fastify-plugin": "^3.0.0",
-        "fastify-swagger": "^4.4.2",
-        "fluent-schema": "^1.0.5",
-        "lodash": "^4.17.21",
-        "mongoose": "^5.12.2",
-        "mongoose-unique-validator": "^2.0.3",
-        "path": "^0.12.7",
-        "pino-colada": "^2.1.0",
-        "v8-compile-cache": "^2.3.0"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.7"
-    }
+  "name": "api-ms",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js | pino-colada",
+    "dev": "./node_modules/nodemon/bin/nodemon.js ./src/server.js | pino-colada",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "niksmac <niksmac@lightrains.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fastify": "^3.25.3",
+    "fastify-autoload": "^3.9.0",
+    "fastify-cors": "^6.0.2",
+    "fastify-etag": "^2.1.0",
+    "fastify-jwt": "^4.1.3",
+    "fastify-mongodb": "^4.1.1",
+    "fastify-oas": "^3.0.8",
+    "fastify-plugin": "^3.0.0",
+    "fastify-swagger": "^4.13.0",
+    "fluent-schema": "^1.0.5",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.4",
+    "mongoose-unique-validator": "^3.0.0",
+    "path": "^0.12.7",
+    "pino-colada": "^2.2.2",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
