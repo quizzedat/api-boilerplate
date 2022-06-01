@@ -24,4 +24,9 @@ app.listen(process.env.PORT || 3000, process.env.HOST || '0.0.0.0', err => {
     app.log.error(err)
     process.exit(1)
   }
+  console.log(
+    `API Server started at ${process.env.HOST || '0.0.0.0'}:${
+      process.env.PORT || 3000
+    }`
+  )
 })
