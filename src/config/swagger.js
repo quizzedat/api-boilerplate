@@ -2,12 +2,12 @@ const Package = require('../../package.json')
 require('dotenv').config()
 
 exports.options = {
-    routePrefix: '/docs',
-    exposeRoute: true,
-    swagger: {
-        info: {
-            title: Package.name,
-            description: `${Package.description} </br>
+  routePrefix: '/docs',
+  exposeRoute: true,
+  swagger: {
+    info: {
+      title: Package.name,
+      description: `${Package.description} </br>
           <b>In most cases a success response will be in the following structure</b>
           <pre><code>
             {
@@ -19,13 +19,13 @@ exports.options = {
               },
               "data": []
           </code></pre>`,
-            version: Package.version
-        },
-        host:
-            process.env.SWAGGER_DOMAIN ||
-            `${process.env.SWAGGER_IP}:${process.env.PORT}`,
-        schemes: ['http', 'https'],
-        consumes: ['application/json'],
-        produces: ['application/json']
-    }
+      version: Package.version
+    },
+    host:
+      process.env.SWAGGER_DOMAIN ||
+      `${process.env.SWAGGER_IP}:${process.env.PORT}`,
+    schemes: ['http', 'https'],
+    consumes: ['application/json'],
+    produces: ['application/json']
+  }
 }
