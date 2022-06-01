@@ -31,5 +31,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ${{ secrets.TARGET_DIR }}
+            cp ../.env .env
             yarn install
             pm2 reload pm2.json --update-env
