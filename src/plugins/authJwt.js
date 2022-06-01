@@ -27,7 +27,6 @@ module.exports = fp(async function (fastify, opts) {
           }
         }
       )
-      done()
     } catch (err) {
       reply.send(err)
     }
