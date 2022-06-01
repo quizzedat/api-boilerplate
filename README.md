@@ -9,7 +9,7 @@
 - CORS Support
 - ETag Support
 - Auto deploy to AWS-EC2 via GitLab [docs](https://medium.com/@adhasmana/how-to-deploy-node-js-app-on-aws-with-gitlab-24fabde1088d)
-- Auto deploy to AWS-EC2 via GitHub Actions
+- Auto deploy to AWS-EC2 via GitHub Actions [docs](https://lightrains.com/blogs/deploy-aws-ec2-using-github-actions/)
 
 ## Dependencies
 
