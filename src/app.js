@@ -1,31 +1,34 @@
 'use strict'
 
 require('dotenv').config()
-// Require the fastify framework and instantiate it
-const fastify = require('fastify')({
-  logger: true
-})
 // Require external modules
 const path = require('path')
-const AutoLoad = require('fastify-autoload')
-const oas = require('fastify-oas')
-const Etag = require('fastify-etag')
+const autoload = require('@fastify/autoload')
+const swagger = require('@fastify/swagger')
+
+const Etag = require('@fastify/etag')
+const cors = require('@fastify/cors')
+
 // Import Swagger Options
-const swagger = require('./config/swagger')
+const swaggerConf = require('./config/swagger')
 
 module.exports = function (fastify, opts, next) {
-  fastify.register(require('fastify-cors'), {
+  fastify.register(cors, {
     origin: '*',
-    allowedHeaders: ['Authorization', 'Content-Type', 'x-admin-auth'],
+    allowedHeaders: ['Authorization', 'Content-Type'],
     credentials: true
   })
-  fastify.register(oas, swagger.options)
+  fastify.register(swagger, swaggerConf.options)
   fastify.register(Etag)
 
-  fastify.register(AutoLoad, {
+  fastify.register(require('@fastify/jwt'), {
+    secret: process.env.JWT_SECRET
+  })
+
+  fastify.register(autoload, {
     dir: path.join(__dirname, 'plugins')
   })
-  fastify.register(AutoLoad, {
+  fastify.register(autoload, {
     dir: path.join(__dirname, 'services'),
     options: Object.assign({ prefix: '/api' }, opts)
   })
