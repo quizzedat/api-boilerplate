@@ -10,11 +10,10 @@ async function dbConnector(fastify, options) {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
-      console.log('Database is connected')
       fastify.decorate('mongo', db)
     } else {
       console.log('Error connecting database')
-      fastify.decorate('mongo', '')
+      process.exit(1)
     }
   } catch (err) {
     console.log(err)

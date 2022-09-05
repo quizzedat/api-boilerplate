@@ -31,10 +31,10 @@ module.exports = fp(function (fastify, opts, next) {
       let resp = {
         error: true,
         statusCode: 422,
-        message: `${error.validation[0].dataPath
-          .substring(1)
+        message: `${error.validation[0].message
+          .substring(0)
           .charAt(0)
-          .toUpperCase()}${error.validation[0].dataPath.substring(2)} ${
+          .toUpperCase()}${error.validation[0].message.substring(1)} ${
           error.validation[0].message
         }`
       }
