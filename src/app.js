@@ -33,5 +33,13 @@ module.exports = function (fastify, opts, next) {
     dir: path.join(__dirname, 'services'),
     options: Object.assign({ prefix: '/api' }, opts)
   })
+
+  fastify.decorate('authenticate', async function (request, reply) {
+    try {
+      await request.jwtVerify()
+    } catch (err) {
+      reply.send(err)
+    }
+  })
   next()
 }

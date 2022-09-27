@@ -26,9 +26,9 @@ module.exports = fp(function (fastify, opts, next) {
   })
 
   fastify.setErrorHandler(function (error, request, reply) {
-    request.log.error(error)
+    let resp
     if (error.validation) {
-      let resp = {
+      resp = {
         error: true,
         statusCode: 422,
         message: `${error.validation[0].message
@@ -37,7 +37,15 @@ module.exports = fp(function (fastify, opts, next) {
           .toUpperCase()}${error.validation[0].message.substring(1)}`
       }
       reply.status(422).send(generateResponse([], resp))
+    } else {
+      resp = {
+        error: true,
+        statusCode: 401,
+        message: error.message
+      }
+      reply.status(401).send(generateResponse([], resp))
     }
+    // reply.status(400).send(generateResponse([], resp))
   })
 
   next()
