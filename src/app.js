@@ -16,7 +16,8 @@ module.exports = function (fastify, opts, next) {
   fastify.register(cors, {
     origin: '*',
     allowedHeaders: ['Authorization', 'Content-Type'],
-    credentials: true
+    credentials: true,
+    maxAge: 8400
   })
   fastify.register(swagger, swaggerConf.options)
   fastify.register(Etag)
