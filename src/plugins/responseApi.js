@@ -34,9 +34,7 @@ module.exports = fp(function (fastify, opts, next) {
         message: `${error.validation[0].message
           .substring(0)
           .charAt(0)
-          .toUpperCase()}${error.validation[0].message.substring(1)} ${
-          error.validation[0].message
-        }`
+          .toUpperCase()}${error.validation[0].message.substring(1)}`
       }
       reply.status(422).send(generateResponse([], resp))
     }
