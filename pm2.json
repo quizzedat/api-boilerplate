@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "tm-api",
+      "script": "./src/server.js",
+      "exec_mode": "cluster",
+      "max_memory_restart": "512M"
+    }
+  ]
+}
