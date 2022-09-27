@@ -22,10 +22,24 @@ exports.options = {
       version: Package.version
     },
     host:
-      process.env.SWAGGER_DOMAIN ||
-      `${process.env.SWAGGER_IP}:${process.env.PORT}`,
+      process.env.SWAGGER_DOMAIN || `${process.env.HOST}:${process.env.PORT}`,
+    basePath: '/api',
     schemes: ['http', 'https'],
     consumes: ['application/json'],
-    produces: ['application/json']
+    produces: ['application/json'],
+    securityDefinitions: {
+      Bearer: {
+        type: 'apiKey',
+        in: 'header',
+        scheme: 'bearer',
+        name: 'Authorization',
+        bearerFormat: 'JWT'
+      },
+      cookieAuth: {
+        type: 'apiKey',
+        in: 'cookie',
+        name: 'token'
+      }
+    }
   }
 }

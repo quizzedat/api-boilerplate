@@ -28,3 +28,9 @@ exports.otpVerifySchema = {
   // TODO change this when move to production
   // .prop('otp', S.string().minLength(4).maxLength(4).required())
 }
+
+exports.getMeSchema = {
+  tags: ['User'],
+  summary: 'Get user profile',
+  security: [{ Bearer: [] }]
+}

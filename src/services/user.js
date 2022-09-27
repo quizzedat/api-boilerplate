@@ -7,7 +7,7 @@ const userModal = new User()
 
 module.exports = async function (fastify, opts) {
   fastify.post(
-    '/user/signup',
+    '/signup',
     { schema: userPayload.otpSchema },
     async function (request, reply) {
       const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
@@ -35,7 +35,7 @@ module.exports = async function (fastify, opts) {
     }
   ),
     fastify.post(
-      '/user/otpresend',
+      '/otpresend',
       { schema: userPayload.otpResendSchema },
       async function (request, reply) {
         const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
@@ -52,7 +52,7 @@ module.exports = async function (fastify, opts) {
       }
     )
   fastify.post(
-    '/user/otpverify',
+    '/otpverify',
     { schema: userPayload.otpVerifySchema },
     async function (request, reply) {
       const { phone, country, otp } = request.body
@@ -71,4 +71,15 @@ module.exports = async function (fastify, opts) {
       }
     }
   )
+  fastify.get(
+    '/me',
+    { schema: userPayload.getMeSchema, onRequest: [fastify.authenticate] },
+    async function (request, reply) {
+      reply.success({
+        message: 'Success'
+      })
+    }
+  )
 }
+
+module.exports.autoPrefix = '/user'
