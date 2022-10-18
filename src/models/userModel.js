@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema(
       default: 0
     },
     isVerified: { type: Boolean, default: false },
-    isKycDone: { type: Boolean, defaule: false }
+    isKycDone: { type: Boolean, default: false }
   },
   {
     timestamps: true
