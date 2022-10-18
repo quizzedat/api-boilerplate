@@ -1,5 +1,5 @@
 'use strict'
-// External Dependancies
+// External Dependencies
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema(
       default: 0
     },
     isVerified: { type: Boolean, default: false },
-    isKycDone: { type: Boolean, defaule: false }
+    isKycDone: { type: Boolean, default: false }
   },
   {
     timestamps: true
