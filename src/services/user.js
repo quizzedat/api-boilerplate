@@ -65,7 +65,7 @@ module.exports = async function (fastify, opts) {
           { expiresIn: '7d' }
         )
         reply.success({
-          message: 'OTP has been verified succesfully',
+          message: 'OTP has been verified successfully',
           accessToken: accessToken
         })
       }
