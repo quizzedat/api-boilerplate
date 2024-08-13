@@ -5,23 +5,32 @@
   "main": "./src/server.js",
   "license": "MIT",
   "dependencies": {
-    "@fastify/cors": "^8.1.0",
-    "@fastify/autoload": "^5.4.1",
-    "@fastify/etag": "^4.1.0",
-    "@fastify/jwt": "^6.3.2",
-    "@fastify/swagger": "^8.0.0",
-    "dotenv": "^16.0.3",
-    "fastify": "^4.9.1",
-    "fluent-json-schema": "^4.0.0",
-    "mongoose": "^6.6.5",
-    "mongoose-unique-validator": "^3.1.0",
+    "@fastify/autoload": "^5.10.0",
+    "@fastify/cors": "^9.0.1",
+    "@fastify/etag": "^5.2.0",
+    "@fastify/jwt": "^8.0.1",
+    "@fastify/swagger": "^7.6.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "fluent-json-schema": "^5.0.0",
+    "module-alias": "^2.2.3",
+    "mongoose": "^8.5.2",
+    "mongoose-unique-validator": "^5.0.1",
     "path": "^0.12.7",
-    "v8-compile-cache": "^2.3.0"
+    "v8-compile-cache": "^2.4.0"
   },
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
     "version": "",
     "postversion": "git push && git push --tags"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@services": "src/services/v1/",
+    "@payloads": "src/payload/",
+    "@models": "src/models/",
+    "@configs": "src/config/",
+    "@utils": "src/utils/"
   }
 }
