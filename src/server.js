@@ -1,4 +1,5 @@
 'use strict'
+require('module-alias/register')
 
 // Read the .env file.
 require('dotenv').config()

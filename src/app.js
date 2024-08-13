@@ -1,5 +1,4 @@
 'use strict'
-
 require('dotenv').config()
 // Require external modules
 const path = require('path')
@@ -10,7 +9,7 @@ const Etag = require('@fastify/etag')
 const cors = require('@fastify/cors')
 
 // Import Swagger Options
-const swaggerConf = require('./config/swagger')
+const swaggerConf = require('@configs/swagger')
 
 module.exports = function (fastify, opts, next) {
   fastify.register(cors, {
@@ -30,8 +29,8 @@ module.exports = function (fastify, opts, next) {
     dir: path.join(__dirname, 'plugins')
   })
   fastify.register(autoload, {
-    dir: path.join(__dirname, 'services'),
-    options: Object.assign({ prefix: '/api' }, opts)
+    dir: path.join(__dirname, 'services/v1/'),
+    options: Object.assign({ prefix: '/api/v1' }, opts)
   })
 
   fastify.decorate('authenticate', async function (request, reply) {

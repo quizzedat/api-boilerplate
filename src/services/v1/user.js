@@ -1,7 +1,7 @@
 'use strict'
 
-const User = require('../models/userModel.js')
-const userPayload = require('../payload/userPayload.js')
+const User = require('@models/userModel.js')
+const userPayload = require('@payloads/userPayload.js')
 
 const userModal = new User()
 

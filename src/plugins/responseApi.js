@@ -1,7 +1,7 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-const generateResponse = require('../utils/generatorResponse')
+const generateResponse = require('@utils/generatorResponse')
 
 // the use of fastify-plugin is required to be able
 // to export the decorators to the outer scope

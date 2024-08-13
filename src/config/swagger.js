@@ -1,30 +1,20 @@
-const Package = require('../../package.json')
-require('dotenv').config()
+const Package = require('@root/package.json')
+const dotenv = require('dotenv')
 
-exports.options = {
+dotenv.config()
+
+const swaggerOptions = {
   routePrefix: '/docs',
   exposeRoute: true,
   swagger: {
     info: {
       title: Package.name,
-      description: `${Package.description} </br>
-          <b>In most cases a success response will be in the following structure</b>
-          <pre><code>
-            {
-              "response": {
-                &nbsp;&nbsp;"statusCode": 200,
-                &nbsp;&nbsp;"message": "Success",
-                &nbsp;&nbsp;"error": false,
-                &nbsp;&nbsp;"version": "x.x.x"
-              },
-              "data": []
-          </code></pre>`,
+      description: Package.description,
       version: Package.version
     },
     host:
       process.env.SWAGGER_DOMAIN || `${process.env.HOST}:${process.env.PORT}`,
-    basePath: '/api',
-    schemes: ['http', 'https'],
+    schemes: process.env.NODE_ENV !== 'production' ? ['http'] : ['https'],
     consumes: ['application/json'],
     produces: ['application/json'],
     securityDefinitions: {
@@ -43,3 +33,5 @@ exports.options = {
     }
   }
 }
+
+exports.options = swaggerOptions
