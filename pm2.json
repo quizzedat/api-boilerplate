@@ -4,7 +4,26 @@
       "name": "api-main",
       "script": "./src/server.js",
       "exec_mode": "cluster",
-      "max_memory_restart": "512M"
+      "instances": "max",
+      "max_memory_restart": "512M",
+      "autorestart": true,
+      "watch": false,
+      "max_restarts": 10,
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "env_development": {
+        "NODE_ENV": "development"
+      },
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "error_file": "logs/error.log",
+      "out_file": "logs/out.log",
+      "log_type": "json",
+      "node_args": "--max-old-space-size=512",
+      "kill_timeout": 3000,
+      "listen_timeout": 8000,
+      "source_map_support": true
     }
   ]
 }

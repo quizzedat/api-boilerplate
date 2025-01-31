@@ -4,6 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const autoload = require('@fastify/autoload')
 const swagger = require('@fastify/swagger')
+const swaggerUi = require('@fastify/swagger-ui')
 
 const Etag = require('@fastify/etag')
 const cors = require('@fastify/cors')
@@ -18,7 +19,11 @@ module.exports = function (fastify, opts, next) {
     credentials: true,
     maxAge: 8400
   })
+  // Register swagger
   fastify.register(swagger, swaggerConf.options)
+  // Register swagger UI
+  fastify.register(swaggerUi, swaggerConf.uiOptions)
+
   fastify.register(Etag)
 
   fastify.register(require('@fastify/jwt'), {

@@ -4,8 +4,6 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const swaggerOptions = {
-  routePrefix: '/docs',
-  exposeRoute: true,
   swagger: {
     info: {
       title: Package.name,
@@ -34,4 +32,10 @@ const swaggerOptions = {
   }
 }
 
+const swaggerUiOptions = {
+  routePrefix: '/docs',
+  exposeRoute: true
+}
+
 exports.options = swaggerOptions
+exports.uiOptions = swaggerUiOptions

@@ -19,7 +19,7 @@ fastify.register(require('./app.js'))
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen({
+    fastify.listen({
       port: process.env.PORT || '3000',
       host: process.env.HOST || '0.0.0.0'
     })

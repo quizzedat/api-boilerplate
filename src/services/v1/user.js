@@ -3,8 +3,6 @@
 const User = require('@models/userModel.js')
 const userPayload = require('@payloads/userPayload.js')
 
-const userModal = new User()
-
 module.exports = async function (fastify, opts) {
   fastify.post(
     '/signup',
@@ -12,7 +10,7 @@ module.exports = async function (fastify, opts) {
     async function (request, reply) {
       const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
       const { phone, country, name, email } = request.body
-      const user = await userModal.getUserByEmail(email)
+      const user = await User.getUserByEmail(email)
       try {
         if (user === null) {
           await User.create({
@@ -40,7 +38,7 @@ module.exports = async function (fastify, opts) {
       async function (request, reply) {
         const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
         const { phone, country } = request.body
-        let user = await userModal.resetOtp(otp, phone, country)
+        let user = await User.resetOtp(otp, phone, country)
         if (user === null) {
           reply.error({ message: 'No such user exists, please sign up.' })
         } else {
@@ -56,7 +54,7 @@ module.exports = async function (fastify, opts) {
     { schema: userPayload.otpVerifySchema },
     async function (request, reply) {
       const { phone, country, otp } = request.body
-      let user = await userModal.verifyOtp(otp, phone, country)
+      let user = await User.verifyOtp(otp, phone, country)
       if (user === null) {
         reply.error({ message: 'OTP is invalid or already verified' })
       } else {
