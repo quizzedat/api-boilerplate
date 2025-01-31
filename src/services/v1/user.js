@@ -1,18 +1,16 @@
 'use strict'
 
-const User = require('../models/userModel.js')
-const userPayload = require('../payload/userPayload.js')
-
-const userModal = new User()
+const User = require('@models/userModel.js')
+const userPayload = require('@payloads/userPayload.js')
 
 module.exports = async function (fastify, opts) {
   fastify.post(
-    '/user/signup',
+    '/signup',
     { schema: userPayload.otpSchema },
     async function (request, reply) {
       const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
       const { phone, country, name, email } = request.body
-      const user = await userModal.getUserByEmail(email)
+      const user = await User.getUserByEmail(email)
       try {
         if (user === null) {
           await User.create({
@@ -35,12 +33,12 @@ module.exports = async function (fastify, opts) {
     }
   ),
     fastify.post(
-      '/user/otpresend',
+      '/otpresend',
       { schema: userPayload.otpResendSchema },
       async function (request, reply) {
         const otp = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
         const { phone, country } = request.body
-        let user = await userModal.resetOtp(otp, phone, country)
+        let user = await User.resetOtp(otp, phone, country)
         if (user === null) {
           reply.error({ message: 'No such user exists, please sign up.' })
         } else {
@@ -52,11 +50,11 @@ module.exports = async function (fastify, opts) {
       }
     )
   fastify.post(
-    '/user/otpverify',
+    '/otpverify',
     { schema: userPayload.otpVerifySchema },
     async function (request, reply) {
       const { phone, country, otp } = request.body
-      let user = await userModal.verifyOtp(otp, phone, country)
+      let user = await User.verifyOtp(otp, phone, country)
       if (user === null) {
         reply.error({ message: 'OTP is invalid or already verified' })
       } else {
@@ -65,10 +63,21 @@ module.exports = async function (fastify, opts) {
           { expiresIn: '7d' }
         )
         reply.success({
-          message: 'OTP has been verified succesfully',
+          message: 'OTP has been verified successfully',
           accessToken: accessToken
         })
       }
     }
   )
+  fastify.get(
+    '/me',
+    { schema: userPayload.getMeSchema, onRequest: [fastify.authenticate] },
+    async function (request, reply) {
+      reply.success({
+        message: 'Success'
+      })
+    }
+  )
 }
+
+module.exports.autoPrefix = '/user'

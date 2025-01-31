@@ -1,4 +1,5 @@
 'use strict'
+require('module-alias/register')
 
 // Read the .env file.
 require('dotenv').config()
@@ -18,7 +19,10 @@ fastify.register(require('./app.js'))
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    fastify.listen({
+      port: process.env.PORT || '3000',
+      host: process.env.HOST || '0.0.0.0'
+    })
   } catch (err) {
     console.log(err)
     process.exit(1)

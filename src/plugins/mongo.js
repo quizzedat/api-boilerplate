@@ -6,10 +6,7 @@ async function dbConnector(fastify, options) {
   try {
     const url = process.env.MONGO_CONN
     if (url) {
-      const db = await mongoose.connect(url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
+      const db = await mongoose.connect(url, {})
       fastify.decorate('mongo', db)
     } else {
       console.log('Error connecting database')
